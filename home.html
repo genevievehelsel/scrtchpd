@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skrchpd</title>
+    <link rel="icon" href="http://www.skrchpd.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.skrchpd.com/favicon.ico" type="image/x-icon">
+   <style>
+        html, body {
+            height: 100%;
+            width: 100%; 
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            display: flex; /* Uses flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            overflow: hidden; /* Prevents scrolling on the entire page */
+        }
+        textarea {
+            width: 95%;
+            height: 95%;
+            resize: none;
+            border: none;
+            padding: 10px;           
+            font-family: "Gill Sans", sans-serif;
+            font-size: 14px;
+            outline: none; 
+            overflow: auto; /* Enables scrolling within the textarea if content overflows */
+        }
+    </style>
+</head>
+<body>
+    <textarea id="notepad" autocomplete="off"></textarea>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const notepad = document.getElementById('notepad');
+            // Load saved data from localStorage
+            notepad.value = localStorage.getItem('notepadContent') || '';
+
+            // Auto-save content to localStorage whenever it changes
+            notepad.addEventListener('input', () => {
+                localStorage.setItem('notepadContent', notepad.value);
+            });
+        });
+    </script>
+</body>
+</html>
