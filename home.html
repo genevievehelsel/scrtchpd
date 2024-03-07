@@ -49,12 +49,15 @@
                     e.preventDefault();
                     var start = this.selectionStart;
                     var end = this.selectionEnd;
+                    
+                    // Define the number of spaces for a tab (e.g., 4 spaces)
+                    var tab = "    "; // 4 non-breaking spaces
 
                     // Set textarea value to: text before caret + tab + text after caret
-                    this.value = this.value.substring(0, start) + '\t' + this.value.substring(end);
+                    this.value = this.value.substring(0, start) + tab + this.value.substring(end);
 
                     // Move caret to right after the inserted tab
-                    this.selectionStart = this.selectionEnd = start + 1;
+                    this.selectionStart = this.selectionEnd = start + tab.length;
                 }
             });
         });
