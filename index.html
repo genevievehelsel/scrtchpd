@@ -37,7 +37,7 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             const notepad = document.getElementById('notepad');
             // Load saved data from localStorage
-            notepad.value = localStorage.getItem('notepadContent') || '';
+            notepad.value = localStorage.getItem('notepadContent') || 'Start typing!\n\nContent will persist automatically, even after closing your browser (as long as you don\'t clear your brower\'s history)';
 
             // Auto-save content to localStorage whenever it changes
             notepad.addEventListener('input', () => {
