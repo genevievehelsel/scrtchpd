@@ -16,6 +16,8 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             overflow: hidden; /* Prevents scrolling on the entire page */
+            background-color: #fcfcfd;
+            color: #28303e;
         }
         textarea {
             width: 95%;
@@ -27,6 +29,16 @@
             font-size: 18px;
             outline: none; 
             overflow: auto; /* Enables scrolling within the textarea if content overflows */
+            background-color: #fcfcfd;
+            color: #28303e;
+        }
+
+        /* Styles for dark mode */
+        @media (prefers-color-scheme: dark) {
+            html, body, textarea {
+                background-color: #28303e; /* Darker background */
+                color: #fcfcfd; /* Lighter text */
+            }
         }
     </style>
 </head>
